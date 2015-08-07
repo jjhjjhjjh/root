@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div>
-	<form action="/lessonMatching/st_mem/join.it" method="post">
-		아이디 <input type="text" name="id" placeholder="6~8글자 이상" /><br />
+	<form action="/mem/reg.it" method="post">
+	<br/><br/>
+			아이디 <input type="text" name="id" placeholder="6~8글자 이상" /><br />
 		비밀번호 <input type="password" name="pass" placeholder="특수문자 최소 1개 이상" /><br />
 		성별 여 <input type="radio" name="gender" value="woman" />&nbsp; &nbsp;
 		남 <input type="radio" name="gender" value="man" /><br />

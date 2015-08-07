@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:c="http://www.springframework.org/schema/c"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
-		
-<context:component-scan base-package="org.jjh.*"/>
 
-<!-- 뷰 리졸버 -->
+	<context:component-scan base-package="org.jjh.st.member" />
+	<context:component-scan base-package="org.jjh.st.member.controller" />
+	<context:component-scan base-package="org.jjh.st.search.model" />
+	<context:component-scan base-package="org.jjh.st.search.controller" />
+	<context:component-scan base-package="org.jjh.tr.member" />
+	<context:component-scan base-package="org.jjh.tr.member.controller" />
+	<context:component-scan base-package="org.jjh.tr.search.model" />
+	<context:component-scan base-package="org.jjh.tr.search.controller" />
+
+
+	<!-- 뷰 리졸버 -->
 	<bean id="default"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:suffix=".jsp">
@@ -85,5 +90,8 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="factory" />
 	</bean>
-
+	<bean id="STMemberDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="org.jjh.st.member.STMemberDao" />
+		<property name="sqlSessionFactory" ref="factory" />
+	</bean>
 </beans>

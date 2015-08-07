@@ -7,13 +7,13 @@
 <title>LessonMatching</title>
 </head>
 <body>
-	<div style="padding-left: 10px">
+	<div style="padding-left: 10px;">
 		<tiles:insertAttribute name="top" />
 	</div>
 	<div style="padding-left: 10px">
 		<tiles:insertAttribute name="menu" />
 	</div>
-	<div style="height: 680px; padding-left: 10px">
+	<div style="height: 600px; padding-left: 10px">
 		<tiles:insertAttribute name="center" />
 	</div>
 	<div style="padding-left: 10px">

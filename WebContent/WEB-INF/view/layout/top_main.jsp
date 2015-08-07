@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <html>
 <body>
-	<div style="background-color: #FAE0D4; height: 80px">
+	<div style="background-color: #FAE0D4; height: 130px">
 	<br/>
 	<h2>과외 매칭 사이트</h2>
-		<form action="" method="post">
+		<form action="/index.it" method="post">
 			아이디 <input type="text" name="id" />&nbsp;&nbsp;
 			비밀번호 <input type="password" name="pass" /> &nbsp;
 			<input type="submit" value="로그인" />&nbsp;
