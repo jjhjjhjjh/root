@@ -7,16 +7,16 @@
 <title>LessonMatching</title>
 </head>
 <body>
-	<div>
+	<div style="padding-left: 10px">
 		<tiles:insertAttribute name="top" />
 	</div>
-	<div>
+	<div style="padding-left: 10px">
 		<tiles:insertAttribute name="menu" />
 	</div>
-	<div>
+	<div style="height: 680px; padding-left: 10px">
 		<tiles:insertAttribute name="center" />
 	</div>
-	<div>
+	<div style="padding-left: 10px">
 		<tiles:insertAttribute name="bottom" />
 	</div>
 </body>

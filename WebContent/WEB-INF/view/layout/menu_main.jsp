@@ -26,7 +26,7 @@
 </style>
 <body>
 <div class="colLine">
- <div style="clear:both;">
+ <div align="center" style="clear:both;">
   <div class="tdFirst" style="width:260px; height:20px; background-color: #ecb4b5">
   과외 선생님 찾기 
   </div>
@@ -36,16 +36,12 @@
   <div class="tdLast" style="width:300px; height:20px;background-color: #ecb4b5">
    퀵 자동 매칭 서비스
   </div>
-  <div class="tdLast" style="width:300px; height:20px;background-color: #ecb4b5">
+  <div class="tdLast" style="width:293px;height:20px;background-color: #ecb4b5">
    나만의 맞춤 선생님
   </div>
-  <div class="tdLast" style="width:290px; height:20px;background-color: #ecb4b5">
+  <div class="tdLast" style="width:280px; height:20px;background-color: #ecb4b5">
    마이페이지
   </div>
  </div>
  </div>
 </body>
-
-
-
-</div>
