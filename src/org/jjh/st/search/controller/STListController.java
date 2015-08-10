@@ -4,36 +4,37 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.jjh.st.member.STMemberDto;
+import org.jjh.member.model.StudentDto;
 import org.jjh.st.search.model.STListSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class STListController {
 	@Autowired
-	STListSearchService sls;
+	StudentDto sdto;
 	@Autowired
-	HttpSession session;
+	STListSearchService sls;
+
 	
-	@RequestMapping("/st/list.it")
+	@RequestMapping(value="/st/list.it", method=RequestMethod.GET)
 	public ModelAndView controll(ModelAndView mav){
-	//public ModelAndView controll(ModelAndView mav, @RequestParam(defaultValue="1") int p){
 		List li = sls.readAllService();
-//		List li = sls.readPagingService(p);
+		System.out.println(li);
 		mav.addObject("list", li);
 		mav.setViewName("tiles:st_search.list");
 		return mav;
 	}
-
 	
-	@RequestMapping("/st/detail.it")
-	public ModelAndView detailControll1(ModelAndView mav, int num){
-		STMemberDto sdto = sls.readOneService(num);
-		mav.addObject("sdto", sdto);
+	@RequestMapping(value="/st/list.it", method=RequestMethod.POST)
+	public ModelAndView controll2(ModelAndView mav){
+		List li = sls.readAllService();
+		System.out.println(li);
+		mav.addObject("list", li);
+		mav.setViewName("tiles:st_search.list");
 		return mav;
 	}
 }

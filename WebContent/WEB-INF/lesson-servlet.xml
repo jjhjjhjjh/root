@@ -8,14 +8,13 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
-	<context:component-scan base-package="org.jjh.st.member" />
+    <context:component-scan base-package="org.jjh.main.controller"/>
+	<context:component-scan base-package="org.jjh.member.controller"/>
+	<context:component-scan base-package="org.jjh.member.model"/>
 	<context:component-scan base-package="org.jjh.st.member.controller" />
 	<context:component-scan base-package="org.jjh.st.search.model" />
 	<context:component-scan base-package="org.jjh.st.search.controller" />
-	<context:component-scan base-package="org.jjh.tr.member" />
-	<context:component-scan base-package="org.jjh.tr.member.controller" />
-	<context:component-scan base-package="org.jjh.tr.search.model" />
-	<context:component-scan base-package="org.jjh.tr.search.controller" />
+
 
 
 	<!-- 뷰 리졸버 -->
@@ -34,12 +33,13 @@
 	<context:component-scan base-package="org.jjh.*" />
 
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="user" value="kadie" />
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@10.211.55.4:1521:xe" />
-		<property name="password" value="1234" />
+		<property name="user" value="jjh" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.10.56:1521:xe" />
+		<property name="password" value="jjh" />
 		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
 	</bean>
-
+	<!-- kadie : 10.211.55.4 / user : kadie / pass : 1234 -->
+	<!-- 우리조 : 192.168.10.56 / user :jjh / pass : jjh -->
 	<!-- 타일즈뷰 리졸버 빈즈 등록 -->
 	<bean id="tiles"
 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"
@@ -90,8 +90,12 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="factory" />
 	</bean>
-	<bean id="STMemberDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="org.jjh.st.member.STMemberDao" />
+	<bean id="StudentDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="org.jjh.member.model.StudentDao" />
+		<property name="sqlSessionFactory" ref="factory" />
+	</bean>
+	<bean id="TeacherDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="org.jjh.member.model.TeacherDao" />
 		<property name="sqlSessionFactory" ref="factory" />
 	</bean>
 </beans>

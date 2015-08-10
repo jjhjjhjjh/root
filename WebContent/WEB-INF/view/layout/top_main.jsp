@@ -9,7 +9,7 @@
 			아이디 <input type="text" name="id" />&nbsp;&nbsp;
 			비밀번호 <input type="password" name="pass" /> &nbsp;
 			<input type="submit" value="로그인" />&nbsp;
-		<input type="button" value="회원가입" onclick="location.href='/lessonMatching/st_mem/join.it'"/>
+		<input type="button" value="회원가입" onclick="location.href='/st_mem/join.it'"/>
 		</form>
 	</div>
 </body>

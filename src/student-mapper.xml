@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jjh.member.model.StudentDao">
+	<insert id="createOne" parameterType="org.jjh.member.model.StudentDto">
+		insert into st_member values(#{id}, #{pass}, #{name}, #{gender}, #{birth},
+		#{phone}, #{email},
+		#{address}, #{picture}, #{school}, #{cost}, #{subject}, #{day}, , sysdate,
+		sysdate})
+	</insert>
+	<select id="readOne" parameterType="java.lang.String" resultType="org.jjh.member.model.StudentDto">
+		select * from member where id=#{id}
+	</select>
+	<select id="readAll" resultType="org.jjh.member.model.StudentDto">
+		select * from board order by log_date desc
+	</select>
+</mapper>

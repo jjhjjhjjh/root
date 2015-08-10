@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class STSearchController {
  @RequestMapping("/st/search.it")
- public ModelAndView controll(ModelAndView mav, String address){
+ public ModelAndView controll(ModelAndView mav, String id){
 		return mav;
 	}
 }
